@@ -139,7 +139,68 @@ header#home .fa-stack i:last-child {
   font-size: 13px;
   color: white;
 }
-
+/* about */
+section#about .left .picture::after {
+  content: "";
+  background-image: url("../images/webp_images/dots.webp"),
+    url("../images/jpg_images/dots.png");
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  left: -20px;
+  bottom: -20px;
+  background-repeat: repeat;
+  z-index: -1;
+}
+section#about .right h2 {
+  color: #343434;
+  font-family: "Montserrat-ExtraBold";
+}
+section#about .right h3 {
+  color: #999;
+  font-family: "Poppins-Regular";
+  font-size: 0.875rem;
+  letter-spacing: 3px;
+}
+section#about .right p {
+  color: #748182;
+  font-family: "Poppins-Regular";
+  font-size: 0.9375rem;
+  line-height: 24px;
+}
+section#about .right p span {
+  font-family: "Poppins-Bold";
+}
+section#about .right .skills .progress {
+  height: 1.5rem;
+  margin-bottom: 30px;
+  box-shadow: inset 0px 1px 5px 0px #00000026;
+}
+section#about .right .skills .progress .progress-bar:first-child {
+  font-size: 13px;
+  font-family: "Montserrat-Medium";
+}
+section#about .right .buttons {
+  font-family: "Poppins-Regular";
+}
+section#about .right .buttons button {
+  font-size: 0.8125rem;
+  transition: all 0.7s;
+}
+section#about .right .buttons button:first-child {
+  color: #eee;
+}
+section#about .right .buttons button:first-child:hover {
+  color: rgb(52, 52, 52);
+  background-color: #fff;
+}
+section#about .right .buttons button:last-child {
+  color: rgb(52, 52, 52);
+}
+section#about .right .buttons button:last-child:hover {
+  color: white;
+  background-color: rgb(33, 37, 41);
+}
 /* ------------------------------------Media------------------------------------ */
 /* lower md */
 @media screen and (max-width: 768px) {
