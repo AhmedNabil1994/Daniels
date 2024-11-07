@@ -201,6 +201,47 @@ section#about .right .buttons button:last-child:hover {
   color: white;
   background-color: rgb(33, 37, 41);
 }
+/* services */
+section#services {
+  scroll-margin-top: 3.25rem;
+}
+section#services h2 {
+  color: #343434;
+  font-size: 2.5rem;
+  font-family: "Montserrat-ExtraBold";
+}
+section#services article {
+  background-color: white;
+  box-shadow: 1px 0px 2px 2px #80808012;
+  transition: all 0.7s;
+}
+section#services article .fa-stack i:first-child {
+  color: #f7f7f7;
+  transition: all 0.3s;
+}
+section#services article .fa-stack i:last-child {
+  font-size: 1.875rem;
+  transition: all 0.3s;
+  color: black;
+}
+section#services article h3 {
+  color: #343434;
+  font-size: 1.125rem;
+  font-family: "Montserrat-ExtraBold";
+}
+section#services article p {
+  color: #748182;
+  font-size: .875rem;
+  font-family:"Poppins-Regular" ;
+  word-spacing: 2px;
+}
+section#services article:hover .fa-stack i:first-child {
+  color: black;
+}
+section#services article:hover .fa-stack i:last-child {
+  color: white;
+}
+
 /* ------------------------------------Media------------------------------------ */
 /* lower md */
 @media screen and (max-width: 768px) {
