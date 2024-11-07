@@ -28,7 +28,7 @@
   font-family: "Montserrat-Black";
   src: url("../fonts/Montserrat-Black.ttf");
 }
-/* Montserrat */
+/* Poppins */
 @font-face {
   font-family: "Poppins-Regular";
   src: url("../fonts/Poppins-Regular.ttf");
@@ -53,7 +53,28 @@
   font-family: "Poppins-Black";
   src: url("../fonts/Poppins-Black.ttf");
 }
-
+/* shared classes */
+.section-title {
+  color: #343434;
+  font-size: 2.5rem;
+  font-family: "Montserrat-ExtraBold";
+  position: relative;
+  z-index: 1;
+  width: fit-content;
+  margin-inline: auto;
+}
+.section-title::after {
+  content: "";
+  background-image: url("../images/webp_images/dots.webp"),
+    url("../images/jpg_images/dots.png");
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  background-repeat: repeat;
+  z-index: -1;
+  bottom: -5px;
+}
 /* Navbar */
 nav {
   /* background-color: rgba(0, 0, 0, 0.9); */
@@ -205,11 +226,6 @@ section#about .right .buttons button:last-child:hover {
 section#services {
   scroll-margin-top: 3.25rem;
 }
-section#services h2 {
-  color: #343434;
-  font-size: 2.5rem;
-  font-family: "Montserrat-ExtraBold";
-}
 section#services article {
   background-color: white;
   box-shadow: 1px 0px 2px 2px #80808012;
@@ -231,8 +247,8 @@ section#services article h3 {
 }
 section#services article p {
   color: #748182;
-  font-size: .875rem;
-  font-family:"Poppins-Regular" ;
+  font-size: 0.875rem;
+  font-family: "Poppins-Regular";
   word-spacing: 2px;
 }
 section#services article:hover .fa-stack i:first-child {
@@ -240,6 +256,42 @@ section#services article:hover .fa-stack i:first-child {
 }
 section#services article:hover .fa-stack i:last-child {
   color: white;
+}
+/* testimonial */
+.carousel {
+  position: static;
+}
+section#testimonial .carousel-item .content p {
+  color: #748182;
+  font-family: "Poppins-Regular";
+  font-size: 0.9375rem;
+  word-spacing: 2px;
+  margin-top: 20px;
+}
+section#testimonial .carousel-item .content h3 {
+  font-family: "Montserrat-SemiBold";
+  font-size: 1rem;
+  color: #343434;
+}
+section#testimonial .carousel-item .content h4 {
+  font-family: "Poppins-SemiBold";
+  font-size: 0.75rem;
+  color: #888;
+}
+.carousel-indicators {
+  position: static;
+}
+.carousel-indicators [data-bs-target] {
+  width: 1rem;
+  height: 1rem;
+  margin-inline: 0.3125rem;
+  border-radius: 50%;
+  background-color: gray;
+  transition: all 0.3s;
+}
+.carousel-indicators [data-bs-target]:hover {
+  opacity: 1;
+  /* background-color: gray; */
 }
 
 /* ------------------------------------Media------------------------------------ */
