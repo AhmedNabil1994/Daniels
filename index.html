@@ -22,11 +22,13 @@
   </head>
   <body data-bs-spy="scroll" data-bs-target="#navbar">
     <!-- start nav -->
-    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-md fixed-top pt-4 bg-danger">
       <div class="container-fluid container-lg">
-        <a class="navbar-brand logo" href="index.html">DevFolio</a>
+        <a class="navbar-brand logo text-uppercase" href="index.html"
+          >Daniels
+        </a>
         <button
-          class="navbar-toggler"
+          class="navbar-toggler text-white"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -35,10 +37,11 @@
           aria-label="Toggle navigation"
         >
           <span class="fa-solid fa-bars"></span>
-          <span class="bi bi-x close"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-uppercase">
+          <ul
+            class="navbar-nav ms-auto mb-2 mb-lg-0 text-capitalize align-items-center"
+          >
             <li class="nav-item link">
               <a class="nav-link" href="#home">home</a>
             </li>
@@ -49,72 +52,14 @@
               <a class="nav-link" href="#services">services </a>
             </li>
             <li class="nav-item link">
-              <a class="nav-link" href="#portfolio">work</a>
+              <a class="nav-link" href="#works">works</a>
             </li>
             <li class="nav-item link">
-              <a class="nav-link" href="#blog">blog</a>
+              <a class="nav-link" href="#clients">clients</a>
             </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                data-bs-auto-close="outside"
-                aria-expanded="false"
-              >
-                Drop down
-                <i
-                  class="bi bi-chevron-right d-block d-lg-none dropdown-arrow"
-                ></i>
-              </a>
-              <ul class="dropdown-menu main">
-                <li>
-                  <a href="#" class="dropdown-item">drop down item</a>
-                </li>
-                <li class="dropdown-submenu dropdown">
-                  <a
-                    class="dropdown-item"
-                    href="#"
-                    data-bs-toggle="dropdown"
-                    data-bs-auto-close="inside"
-                    aria-expanded="false"
-                  >
-                    deep drop down
-                    <i
-                      class="fa-solid fa-chevron-right ps-3 dropdown-arrow"
-                    ></i>
-                  </a>
-                  <ul class="dropdown-menu dropdown-submenu">
-                    <li>
-                      <a href="#" class="dropdown-item">deep drop down 1</a>
-                    </li>
-                    <li>
-                      <a href="#" class="dropdown-item">deep drop down 2</a>
-                    </li>
-                    <li>
-                      <a href="#" class="dropdown-item">deep drop down 3</a>
-                    </li>
-                    <li>
-                      <a href="#" class="dropdown-item">deep drop down 4</a>
-                    </li>
-                    <li>
-                      <a href="#" class="dropdown-item">deep drop down 5</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="other-sections">
-                  <a href="#statistics" class="dropdown-item">statistics</a>
-                </li>
-                <li class="other-sections">
-                  <a href="#faq" class="dropdown-item text-uppercase">faq</a>
-                </li>
-                <li class="other-sections">
-                  <a href="#testimonial" class="dropdown-item">testimonials</a>
-                </li>
-              </ul>
+            <li class="nav-item link">
+              <a class="nav-link" href="#team">team</a>
             </li>
-
             <li class="nav-item link">
               <a class="nav-link" href="#contact">contact</a>
             </li>
@@ -125,19 +70,156 @@
     <!-- end nav -->
     <!-- --------------------- -->
     <!-- start header -->
-    <!-- <header
+    <header
       id="home"
-      class="position-relative d-flex justify-content-center align-items-center z-2"
+      class="position-relative d-flex justify-content-center align-items-center"
     >
       <div class="position-absolute text">
-        <h1 class="mb-3">I am Morgan Freeman</h1>
-        <p>
-          <span class="typing"></span>
-        </p>
+        <p class="mb-3">Hello</p>
+        <h1>I Am <span class="typing"></span></h1>
+        <div class="icons mt-5">
+          <span class="fa-stack fa-2x">
+            <i class="fa-solid fa-circle fa-stack-2x"></i>
+            <i class="fa-brands fa-facebook-f fa-stack-1x fa-inverse"></i>
+          </span>
+          <span class="fa-stack fa-2x">
+            <i class="fa-solid fa-circle fa-stack-2x"></i>
+            <i class="fa-brands fa-twitter fa-stack-1x fa-inverse"></i>
+          </span>
+          <span class="fa-stack fa-2x">
+            <i class="fa-solid fa-circle fa-stack-2x"></i>
+            <i class="fa-brands fa-linkedin-in fa-stack-1x fa-inverse"></i>
+          </span>
+          <span class="fa-stack fa-2x">
+            <i class="fa-solid fa-circle fa-stack-2x"></i>
+            <i class="fa-brands fa-behance fa-stack-1x fa-inverse"></i>
+          </span>
+          <span class="fa-stack fa-2x">
+            <i class="fa-solid fa-circle fa-stack-2x"></i>
+            <i class="fa-brands fa-youtube fa-stack-1x fa-inverse"></i>
+          </span>
+        </div>
       </div>
-    </header> -->
+    </header>
     <!-- end header -->
     <!-- --------------------- -->
+    <!-- start about -->
+    <section id="about" class="bg-light mt-5 pt-5">
+      <div class="container">
+        <div class="content p-2 p-sm-3 p-lg-5">
+          <div class="row">
+            <div class="col-lg-6 left p-3">
+              <div>
+                <div class="row">
+                  <div class="col-sm-6 col-md-6">
+                    <div>
+                      <picture>
+                        <source
+                          srcset="./images/webp_images/testimonial-2.webp"
+                          type="image/webp"
+                        />
+                        <img
+                          class="rounded-2 img-fluid"
+                          src="./images/jpg_images/testimonial-2.jpg"
+                          alt="About Me Image"
+                          loading="lazy"
+                        />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6">
+                    <article class="info mt-3 mt-lg-2">
+                      <h2 class="mb-3"><span>Name</span>: Morgan Freeman</h2>
+                      <h2 class="mb-3">
+                        <span>Profile</span>: full stack developer
+                      </h2>
+                      <h2 class="mb-3">
+                        <span>Email</span>: contact@example.com
+                      </h2>
+                      <h2 class="mb-3"><span>Phone</span>: (617) 557-0089</h2>
+                    </article>
+                  </div>
+                  <div class="col mt-5 mt-xl-4">
+                    <article class="skills">
+                      <h2>Skill</h2>
+                      <p>HTML 85%</p>
+                      <div
+                        class="progress mb-3"
+                        role="progressbar"
+                        aria-label="Basic example"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <div class="progress-bar" style="width: 85%"></div>
+                      </div>
+                      <p>CSS3 75%</p>
+                      <div
+                        class="progress mb-3"
+                        role="progressbar"
+                        aria-label="Basic example"
+                        aria-valuenow="50"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <div class="progress-bar" style="width: 75%"></div>
+                      </div>
+                      <p>PHP 50%</p>
+                      <div
+                        class="progress mb-3"
+                        role="progressbar"
+                        aria-label="Basic example"
+                        aria-valuenow="75"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <div class="progress-bar" style="width: 50%"></div>
+                      </div>
+                      <p>JAVASCRIPT 90%</p>
+                      <div
+                        class="progress mb-3"
+                        role="progressbar"
+                        aria-label="Basic example"
+                        aria-valuenow="100"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <div class="progress-bar" style="width: 90%"></div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 right p-3">
+              <article class="">
+                <h2 class="left-underline">About me</h2>
+                <p class="lead mt-5">
+                  Curabitur non nulla sit amet nisl tempus convallis quis ac
+                  lectus. Curabitur arcu erat, accumsan id imperdiet et,
+                  porttitor at sem. Praesent sapien massa, convallis a
+                  pellentesque nec, egestas non nisi. Nulla porttitor accumsan
+                  tincidunt.
+                </p>
+                <p class="lead">
+                  Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+                  Vivamus suscipit tortor eget felis porttitor volutpat.
+                  Vestibulum ac diam sit amet quam vehicula elementum sed sit
+                  amet dui. porttitor at sem.
+                </p>
+                <p class="lead">
+                  Nulla porttitor accumsan tincidunt. Quisque velit nisi,
+                  pretium ut lacinia in, elementum id enim. Nulla porttitor
+                  accumsan tincidunt. Mauris blandit aliquet elit, eget
+                  tincidunt nibh pulvinar a.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end about -->
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/app.js"></script>
   </body>

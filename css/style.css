@@ -1,4 +1,13 @@
-/* fonts */
+/* ------------------------------------Fonts------------------------------------ */
+/* Montserrat */
+@font-face {
+  font-family: "Montserrat-ExtraLight";
+  src: url("../fonts/Montserrat-ExtraLight.ttf");
+}
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("../fonts/Montserrat-Regular.ttf");
+}
 @font-face {
   font-family: "Montserrat-Medium";
   src: url("../fonts/Montserrat-Medium.ttf");
@@ -18,4 +27,138 @@
 @font-face {
   font-family: "Montserrat-Black";
   src: url("../fonts/Montserrat-Black.ttf");
+}
+/* Montserrat */
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("../fonts/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: "Poppins-Medium";
+  src: url("../fonts/Poppins-Medium.ttf");
+}
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url("../fonts/Poppins-SemiBold.ttf");
+}
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("../fonts/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: "Poppins-ExtraBold";
+  src: url("../fonts/Poppins-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "Poppins-Black";
+  src: url("../fonts/Poppins-Black.ttf");
+}
+
+/* Navbar */
+nav {
+  /* background-color: rgba(0, 0, 0, 0.9); */
+}
+.navbar-brand {
+  font-family: "Montserrat-ExtraBold";
+  font-size: 1.125rem;
+  color: white;
+}
+.navbar-brand:focus,
+.navbar-brand:hover {
+  color: white;
+}
+nav button.navbar-toggler {
+  border: 0;
+}
+nav button.navbar-toggler:focus {
+  box-shadow: none;
+}
+nav button.navbar-toggler .fa-bars {
+  font-size: 1.5625rem;
+}
+nav ul.navbar-nav li {
+  margin-left: 0.9375rem;
+}
+.nav-link {
+  color: white;
+  position: relative;
+  font-family: "Poppins-Regular";
+  font-size: 0.875rem;
+}
+.nav-link:focus,
+.nav-link:hover {
+  color: white;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  color: white;
+}
+.navbar-nav .nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0.3125rem;
+  right: 0.3125rem;
+  height: 2px;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.7s;
+}
+.navbar-nav .nav-link.active::before {
+  transform: scaleX(1);
+}
+
+/* Header */
+header#home {
+  height: 100vh;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../images/webp_images/bg.webp") center / cover scroll,
+    url("../images/jpg_images/bg.jpg") center / cover scroll;
+}
+header#home .text {
+  color: white;
+  text-align: center;
+}
+header#home p {
+  font-size: 3.125rem;
+  font-family: "Montserrat-ExtraBold";
+}
+header#home h1 {
+  font-size: 3.75rem;
+  font-family: "Montserrat-ExtraLight";
+}
+header#home h1 span {
+  font-family: "Montserrat-Regular";
+}
+header#home .fa-stack {
+  color: #000c14;
+  font-size: 17px;
+}
+header#home .fa-stack i:last-child {
+  font-size: 13px;
+  color: white;
+}
+
+/* ------------------------------------Media------------------------------------ */
+/* lower md */
+@media screen and (max-width: 768px) {
+  /* Navbar */
+  ul.navbar-nav {
+    background-color: white;
+    padding-top: 10px;
+  }
+  li.nav-item {
+    padding-block: 0.3125rem;
+  }
+  a.nav-link {
+    color: #111;
+    font-size: 0.8125rem;
+    transition: all var(--main-transition-duration);
+  }
+  /* header */
+  header#home h1 {
+    font-size: 1.875rem;
+    font-family: "Montserrat-ExtraLight";
+  }
 }
