@@ -258,6 +258,9 @@ section#services article:hover .fa-stack i:last-child {
   color: white;
 }
 /* testimonial */
+section#testimonial {
+  scroll-margin-top: 3.25rem;
+}
 .carousel {
   position: static;
 }
@@ -291,7 +294,21 @@ section#testimonial .carousel-item .content h4 {
 }
 .carousel-indicators [data-bs-target]:hover {
   opacity: 1;
-  /* background-color: gray; */
+}
+
+/* stats */
+section#stats .box i {
+  font-size: 1.875rem;
+}
+section#stats .box p {
+  font-size: 1.875rem;
+  color: #343434;
+  font-family: "Montserrat-Black";
+}
+section#stats .box h2 {
+  font-size: 0.9375rem;
+  color: #748182;
+  font-family: "Poppins-SemiBold";
 }
 
 /* ------------------------------------Media------------------------------------ */
