@@ -85,6 +85,15 @@
   z-index: -1;
   bottom: -5px;
 }
+.active-line::after {
+  content: "";
+  position: absolute;
+  left: 0.3125rem;
+  right: 0.3125rem;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+}
 /* ------------------------------------js classes------------------------------------ */
 .navbar-home {
   background-color: transparent;
@@ -168,23 +177,16 @@ nav ul.navbar-nav li {
 .navbar-scrolled .navbar-nav .nav-link.show {
   color: var(--color-3);
 }
-.navbar-nav .nav-link::before {
-  content: "";
-  position: absolute;
+.navbar-nav .nav-link::after {
   bottom: 0px;
-  left: 0.3125rem;
-  right: 0.3125rem;
-  height: 2px;
   background-color: var(--white-color);
-  transform: scaleX(0);
-  transform-origin: left;
   transition: transform 0.7s;
 }
-.navbar-scrolled .navbar-nav .nav-link::before {
-  background-color: var(--color-3);
-}
-.navbar-nav .nav-link.active::before {
+.navbar-nav .nav-link.active::after {
   transform: scaleX(1);
+}
+.navbar-scrolled .navbar-nav .nav-link::after {
+  background-color: var(--color-3);
 }
 
 /* ------------------------------------Header------------------------------------ */
@@ -374,15 +376,8 @@ section#portfolio .cards ul.nav-pills button {
   position: relative;
 }
 section#portfolio .cards ul.nav-pills button::after {
-  content: "";
-  position: absolute;
   bottom: 15%;
-  left: 0.3125rem;
-  right: 0.3125rem;
-  height: 2px;
   background-color: var(--black-color);
-  transform: scaleX(0);
-  transform-origin: left;
   transition: transform 0.3s;
 }
 section#portfolio .cards ul.nav-pills button.active {
@@ -624,7 +619,7 @@ footer h2 {
   .navbar-nav .nav-link.show {
     color: var(--color-3);
   }
-  .navbar-nav .nav-link::before {
+  .navbar-nav .nav-link::after {
     background-color: var(--color-3);
     transition-duration: 0.3s;
   }
