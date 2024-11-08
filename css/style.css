@@ -357,9 +357,6 @@ section#team .links a i {
 section#team .links a:hover i {
   color: black;
 }
-section#team .links a:hover i:last-child {
-  /* color: black; */
-}
 section#team .card-body h3 {
   font-size: 1.5625rem;
   font-family: "Montserrat-Medium";
@@ -367,6 +364,14 @@ section#team .card-body h3 {
 section#team .card-body h3 {
   font-size: 1.25rem;
   font-family: "Montserrat-Bold";
+}
+
+/* footer */
+footer h2 {
+  font-size: 0.8125rem;
+  color: #748182;
+  font-family: "Poppins-Regular";
+  word-spacing: 0.125rem;
 }
 
 /* ------------------------------------Media------------------------------------ */
