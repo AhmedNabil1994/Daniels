@@ -410,6 +410,10 @@ section#contact form button {
   padding-inline: 2.5rem;
 }
 /* footer */
+footer {
+  padding-block: 1.875rem;
+  background-color: #1c1c1c;
+}
 footer h2 {
   font-size: 0.8125rem;
   color: #748182;
