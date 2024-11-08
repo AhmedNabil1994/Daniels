@@ -30,11 +30,14 @@ function tabsImagesEffect(zoomIcons, sliderImages) {
   function tabTypeCallback(zoomIcon) {
     sliderImages.forEach(sliderCallback);
     function sliderCallback(sliderImage) {
-      zoomIcon.addEventListener("click", () => {
+      zoomIcon.addEventListener("click", (e) => {
         // test here
-        if (tabTypeImage.src === sliderImage.src) {
+        let cardImage = zoomIcon.parentElement.parentElement.parentElement.previousElementSibling.querySelector("img");
+        if (cardImage.src === sliderImage.src) {
           sliderImage.parentElement.parentElement.classList.add("active");
         }
+        console.log(zoomIcon.parentElement.parentElement.parentElement.previousElementSibling.querySelector("img"), "cardImage");
+        
       });
     }
   }
@@ -54,16 +57,9 @@ function removeActiveClass(sliderImages) {
 
 // closing slider effect
 (function sliderCloseEffect() {
-  allSliders.forEach(sliderCallback);
-  function sliderCallback(slider) {
-    slider.addEventListener("transitionend", () => {
-      if (!slider.classList.contains("show")) {
-        removeActiveClass(sliderOneImages);
-        removeActiveClass(sliderTwoImages);
-        removeActiveClass(sliderThreeImages);
-        removeActiveClass(sliderFourImages);
-        removeActiveClass(sliderFiveImages);
-      }
-    });
-  }
+  portfolioSlider.addEventListener("transitionend", () => {
+    if (!portfolioSlider.classList.contains("show")) {
+      removeActiveClass(sliderImages);
+    }
+  });
 })();
