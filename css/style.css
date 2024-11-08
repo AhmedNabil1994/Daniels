@@ -56,8 +56,16 @@
 }
 
 /* ------------------------------------shared classes------------------------------------ */
+:root {
+  --color-1: #748182;
+  --color-2: #343434;
+  --color-3: #111;
+  --color-4: #1c1c1c;
+  --white-color: white;
+  --black-color: black;
+}
 .section-title {
-  color: #343434;
+  color: var(--color-2);
   font-size: 2.5rem;
   font-family: "Montserrat-ExtraBold";
   position: relative;
@@ -77,19 +85,48 @@
   z-index: -1;
   bottom: -5px;
 }
+/* ------------------------------------js classes------------------------------------ */
+.navbar-home {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+.navbar-scrolled {
+  background-color: var(--white-color);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+nav.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
 
 /* ------------------------------------Navbar------------------------------------ */
 nav {
-  /* background-color: rgba(0, 0, 0, 0.9); */
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+.navbar {
+  position: absolute;
 }
 .navbar-brand {
   font-family: "Montserrat-ExtraBold";
   font-size: 1.125rem;
-  color: white;
+  color: var(--white-color);
+}
+nav.navbar-scrolled .navbar-brand {
+  color: var(--color-4);
 }
 .navbar-brand:focus,
 .navbar-brand:hover {
   color: white;
+}
+nav.navbar-scrolled .navbar-brand:focus,
+nav.navbar-scrolled .navbar-brand:hover {
+  color: var(--color-4);
 }
 nav button.navbar-toggler {
   border: 0;
@@ -100,22 +137,36 @@ nav button.navbar-toggler:focus {
 nav button.navbar-toggler .fa-bars {
   font-size: 1.5625rem;
 }
+.navbar-scrolled button.navbar-toggler .fa-bars {
+  color: var(--black-color);
+}
 nav ul.navbar-nav li {
   margin-left: 0.9375rem;
 }
 .nav-link {
-  color: white;
+  color: var(--white-color);
   position: relative;
   font-family: "Poppins-Regular";
   font-size: 0.875rem;
 }
+.navbar-scrolled .nav-link {
+  color: var(--color-3);
+}
 .nav-link:focus,
 .nav-link:hover {
-  color: white;
+  color: var(--white-color);
+}
+.navbar-scrolled .nav-link:focus,
+.navbar-scrolled .nav-link:hover {
+  color: var(--color-3);
 }
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link.show {
-  color: white;
+  color: var(--white-color);
+}
+.navbar-scrolled .navbar-nav .nav-link.active,
+.navbar-scrolled .navbar-nav .nav-link.show {
+  color: var(--color-3);
 }
 .navbar-nav .nav-link::before {
   content: "";
@@ -124,10 +175,13 @@ nav ul.navbar-nav li {
   left: 0.3125rem;
   right: 0.3125rem;
   height: 2px;
-  background-color: white;
+  background-color: var(--white-color);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.7s;
+}
+.navbar-scrolled .navbar-nav .nav-link::before {
+  background-color: var(--color-3);
 }
 .navbar-nav .nav-link.active::before {
   transform: scaleX(1);
@@ -141,7 +195,7 @@ header#home {
     url("../images/jpg_images/bg.jpg") center / cover scroll;
 }
 header#home .text {
-  color: white;
+  color: var(--white-color);
   text-align: center;
 }
 header#home p {
@@ -162,7 +216,7 @@ header#home .fa-stack {
 }
 header#home .fa-stack i:last-child {
   font-size: 13px;
-  color: white;
+  color: var(--white-color);
 }
 
 /* ------------------------------------About------------------------------------ */
@@ -179,7 +233,7 @@ section#about .left .picture::after {
   z-index: -1;
 }
 section#about .right h2 {
-  color: #343434;
+  color: var(--color-2);
   font-family: "Montserrat-ExtraBold";
 }
 section#about .right h3 {
@@ -189,7 +243,7 @@ section#about .right h3 {
   letter-spacing: 3px;
 }
 section#about .right p {
-  color: #748182;
+  color: var(--color-1);
   font-family: "Poppins-Regular";
   font-size: 0.9375rem;
   line-height: 24px;
@@ -224,7 +278,7 @@ section#about .right .buttons button:last-child {
   color: rgb(52, 52, 52);
 }
 section#about .right .buttons button:last-child:hover {
-  color: white;
+  color: var(--white-color);
   background-color: rgb(33, 37, 41);
 }
 
@@ -233,7 +287,7 @@ section#services {
   scroll-margin-top: 3.25rem;
 }
 section#services article {
-  background-color: white;
+  background-color: var(--white-color);
   box-shadow: 1px 0px 2px 2px #80808012;
   transition: all 0.7s;
 }
@@ -244,24 +298,24 @@ section#services article .fa-stack i:first-child {
 section#services article .fa-stack i:last-child {
   font-size: 1.875rem;
   transition: all 0.3s;
-  color: black;
+  color: var(--black-color);
 }
 section#services article h3 {
-  color: #343434;
+  color: var(--color-2);
   font-size: 1.125rem;
   font-family: "Montserrat-ExtraBold";
 }
 section#services article p {
-  color: #748182;
+  color: var(--color-1);
   font-size: 0.875rem;
   font-family: "Poppins-Regular";
   word-spacing: 2px;
 }
 section#services article:hover .fa-stack i:first-child {
-  color: black;
+  color: var(--black-color);
 }
 section#services article:hover .fa-stack i:last-child {
-  color: white;
+  color: var(--white-color);
 }
 
 /* ------------------------------------Portfolio------------------------------------ */
@@ -277,7 +331,7 @@ section#portfolio .slider span.close-icon {
   position: absolute;
   top: -3.125rem;
   right: -1rem;
-  color: white;
+  color: var(--white-color);
   font-size: 2rem;
 }
 section#portfolio .slider .carousel .carousel-inner {
@@ -326,7 +380,7 @@ section#portfolio .cards ul.nav-pills button::after {
   left: 0.3125rem;
   right: 0.3125rem;
   height: 2px;
-  background-color: black;
+  background-color: var(--black-color);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s;
@@ -344,7 +398,7 @@ section#portfolio article.card .links {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: white;
+  background-color: var(--white-color);
   margin: 0.1875rem;
   opacity: 0;
   transition: opacity 0.7s;
@@ -353,34 +407,34 @@ section#portfolio article.card:hover .links {
   opacity: 1;
 }
 section#portfolio article.card .links h3 {
-  color: #343434;
+  color: var(--color-2);
   font-size: 0.75rem;
   font-family: "Montserrat-Bold";
   letter-spacing: 0.125rem;
 }
 section#portfolio article.card .icons {
-  color: black;
+  color: var(--black-color);
   display: flex;
   justify-content: center;
 }
 section#portfolio .icons a {
   width: 30px;
   height: 30px;
-  border: 1px solid black;
+  border: 1px solid var(--black-color);
   border-radius: 50%;
-  background-color: black;
+  background-color: var(--black-color);
   transition: all 0.5s;
 }
 section#portfolio .icons a:hover {
-  background-color: white;
+  background-color: var(--white-color);
 }
 section#portfolio .icons a i {
   transition: inherit;
-  color: white;
+  color: var(--white-color);
   font-size: 13px;
 }
 section#portfolio .links a:hover i {
-  color: black;
+  color: var(--black-color);
 }
 
 /* ------------------------------------Testimonial------------------------------------ */
@@ -391,7 +445,7 @@ section#testimonial {
   position: static;
 }
 section#testimonial .carousel-item .content p {
-  color: #748182;
+  color: var(--color-1);
   font-family: "Poppins-Regular";
   font-size: 0.9375rem;
   word-spacing: 2px;
@@ -400,7 +454,7 @@ section#testimonial .carousel-item .content p {
 section#testimonial .carousel-item .content h3 {
   font-family: "Montserrat-SemiBold";
   font-size: 1rem;
-  color: #343434;
+  color: var(--color-2);
 }
 section#testimonial .carousel-item .content h4 {
   font-family: "Poppins-SemiBold";
@@ -428,12 +482,12 @@ section#stats .box i {
 }
 section#stats .box p {
   font-size: 1.875rem;
-  color: #343434;
+  color: var(--color-2);
   font-family: "Montserrat-Black";
 }
 section#stats .box h2 {
   font-size: 0.9375rem;
-  color: #748182;
+  color: var(--color-1);
   font-family: "Poppins-SemiBold";
 }
 
@@ -452,7 +506,7 @@ section#team picture:hover img {
   transform: scale(1.2);
 }
 section#team .links {
-  background-color: white;
+  background-color: var(--white-color);
   padding: 30px;
   display: flex;
   justify-content: center;
@@ -468,19 +522,19 @@ section#team .links a {
   font-size: 1.2em;
   width: 40px;
   height: 40px;
-  border: 1px solid black;
+  border: 1px solid var(--black-color);
   border-radius: 50%;
-  background-color: black;
+  background-color: var(--black-color);
   transition: all 0.5s;
 }
 section#team .links a:hover {
-  background-color: white;
+  background-color: var(--white-color);
 }
 section#team .links a i {
   transition: inherit;
 }
 section#team .links a:hover i {
-  color: black;
+  color: var(--black-color);
 }
 section#team .card-body h3 {
   font-size: 1.5625rem;
@@ -500,15 +554,15 @@ section#contact .box i {
   transition: all 0.5s;
 }
 section#contact .box:hover i {
-  background-color: black;
-  color: white;
+  background-color: var(--black-color);
+  color: var(--white-color);
 }
 section#contact .box p:first-of-type {
-  color: #343434;
+  color: var(--color-2);
   font-family: "Montserrat-Bold";
 }
 section#contact .box p:last-of-type {
-  color: #748182;
+  color: var(--color-1);
   font-size: 0.9375rem;
   font-family: "Poppins-Regular";
 }
@@ -539,11 +593,11 @@ section#contact form button {
 /* ------------------------------------Footer------------------------------------ */
 footer {
   padding-block: 1.875rem;
-  background-color: #1c1c1c;
+  background-color: var(--color-4);
 }
 footer h2 {
   font-size: 0.8125rem;
-  color: #748182;
+  color: var(--color-1);
   font-family: "Poppins-Regular";
   word-spacing: 0.125rem;
 }
@@ -553,16 +607,26 @@ footer h2 {
 @media screen and (max-width: 768px) {
   /* Navbar */
   ul.navbar-nav {
-    background-color: white;
+    background-color: var(--white-color);
     padding-top: 10px;
   }
   li.nav-item {
     padding-block: 0.3125rem;
   }
   a.nav-link {
-    color: #111;
+    color: var(--color-3);
     font-size: 0.8125rem;
     transition: all var(--main-transition-duration);
+  }
+  .nav-link:focus,
+  .nav-link:hover,
+  .navbar-nav .nav-link.active,
+  .navbar-nav .nav-link.show {
+    color: var(--color-3);
+  }
+  .navbar-nav .nav-link::before {
+    background-color: var(--color-3);
+    transition-duration: 0.3s;
   }
   /* header */
   header#home h1 {

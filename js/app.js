@@ -37,7 +37,7 @@ console.log(allZoomIcons);
 //           sliderImage.parentElement.parentElement.classList.add("active");
 //         }
 //         console.log(zoomIcon.parentElement.parentElement.parentElement.previousElementSibling.querySelector("img"), "cardImage");
-        
+
 //       });
 //     }
 //   }
@@ -63,3 +63,29 @@ console.log(allZoomIcons);
 //     }
 //   });
 // })();
+
+// ------------------------------------mobile nav effect----------------------------
+// nav link logic (clicking the link closes the menu and scroll)
+(function navLinkEffect() {
+  navLinks.forEach(callback);
+  function callback(link) {
+    link.addEventListener("click", () => {
+      mobileList.classList.remove("show");
+    });
+  }
+})();
+
+// ------------------------------------navbar scrolling effect----------------------------
+(function navbarScrolling() {
+  document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > window.innerHeight) {
+        navbar.classList.add("navbar-scrolled");
+        navbar.classList.add("fixed-top");
+      } else {
+        navbar.classList.remove("navbar-scrolled");
+        navbar.classList.remove("fixed-top");
+      }
+    });
+  });
+})();
