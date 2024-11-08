@@ -1,6 +1,5 @@
 // ------------------------------------global elements variable----------------------------
 // nav elements
-const barsIcon = document.querySelector(".fa-bars");
 const navbar = document.getElementById("navbar");
 const mobileList = document.getElementById("navbarSupportedContent");
 const navLinks = document.querySelectorAll("li.nav-item.link");
@@ -8,8 +7,7 @@ const navLinks = document.querySelectorAll("li.nav-item.link");
 const portfolioSlider = document.querySelector(".slider");
 const sliderImages = document.querySelectorAll("#portfolioModal img");
 // nav and tabs zoom icons in portfolio
-const allZoomIcons = document.querySelectorAll("#pills-all .fa-search-plus");
-console.log(allZoomIcons);
+const allZoomIcons = document.querySelectorAll(".navs-tabs .fa-search-plus");
 
 // ------------------------------------home typing animation----------------------------
 (function typingAnimation() {
@@ -25,44 +23,39 @@ console.log(allZoomIcons);
 
 // ------------------------------------portfolio sliders effect----------------------------
 // general function of portfolio tabs images
-// function tabsImagesEffect(zoomIcons, sliderImages) {
-//   zoomIcons.forEach(tabTypeCallback);
-//   function tabTypeCallback(zoomIcon) {
-//     sliderImages.forEach(sliderCallback);
-//     function sliderCallback(sliderImage) {
-//       zoomIcon.addEventListener("click", (e) => {
-//         // test here
-//         let cardImage = zoomIcon.parentElement.parentElement.parentElement.previousElementSibling.querySelector("img");
-//         if (cardImage.src === sliderImage.src) {
-//           sliderImage.parentElement.parentElement.classList.add("active");
-//         }
-//         console.log(zoomIcon.parentElement.parentElement.parentElement.previousElementSibling.querySelector("img"), "cardImage");
-
-//       });
-//     }
-//   }
-// }
+function tabsImagesEffect(zoomIcons, sliderImages) {
+  zoomIcons.forEach(zoomIcon => {
+    sliderImages.forEach(sliderImage => {
+      zoomIcon.addEventListener("click", (e) => {
+        const correspondingCardImage = zoomIcon.parentElement.parentElement.parentElement.previousElementSibling.querySelector("img");
+        if (correspondingCardImage.src === sliderImage.src) {
+          sliderImage.parentElement.parentElement.classList.add("active");
+        }
+      });
+    });
+  });
+}
 
 // clicking portfolio image to show slider
-// (function portfolioImagesEffect() {
-//   tabsImagesEffect(allZoomIcons, sliderImages);
-// })();
+(function portfolioImagesEffect() {
+  tabsImagesEffect(allZoomIcons, sliderImages);
+})();
 
 // remove active class when closing the slider
-// function removeActiveClass(sliderImages) {
-//   sliderImages.forEach((sliderImage) => {
-//     sliderImage.parentElement.parentElement.classList.remove("active");
-//   });
-// }
+function removeActiveClass(sliderImages) {
+  sliderImages.forEach((sliderImage) => {
+    sliderImage.parentElement.parentElement.classList.remove("active");
+  });
+}
 
 // closing slider effect
-// (function sliderCloseEffect() {
-//   portfolioSlider.addEventListener("transitionend", () => {
-//     if (!portfolioSlider.classList.contains("show")) {
-//       removeActiveClass(sliderImages);
-//     }
-//   });
-// })();
+(function sliderCloseEffect() {
+  portfolioSlider.addEventListener("transitionend", () => {
+    if (!portfolioSlider.classList.contains("show")) {
+      removeActiveClass(sliderImages);
+    }
+  });
+})();
 
 // ------------------------------------mobile nav effect----------------------------
 // nav link logic (clicking the link closes the menu and scroll)
@@ -89,3 +82,4 @@ console.log(allZoomIcons);
     });
   });
 })();
+
