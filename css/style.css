@@ -365,7 +365,50 @@ section#team .card-body h3 {
   font-size: 1.25rem;
   font-family: "Montserrat-Bold";
 }
-
+/* contact */
+section#contact header {
+  margin-bottom: 3.125rem;
+}
+section#contact .box i {
+  background-color: #f4f4f4;
+  transition: all 0.5s;
+}
+section#contact .box:hover i {
+  background-color: black;
+  color: white;
+}
+section#contact .box p:first-of-type {
+  color: #343434;
+  font-family: "Montserrat-Bold";
+}
+section#contact .box p:last-of-type {
+  color: #748182;
+  font-size: 0.9375rem;
+  font-family: "Poppins-Regular";
+}
+section#contact form input,
+section#contact form textarea {
+  background-color: #f4f4f4;
+  border: none;
+  font-size: 0.875rem;
+  font-family: "Poppins-Regular";
+}
+section#contact form textarea {
+ height: 10rem;
+ max-height: 10rem;
+}
+.form-control:focus {
+  box-shadow: none;
+}
+.form-control:focus-visible {
+  outline: none;
+}
+section#contact form button {
+  font-size: 0.8125rem;
+  font-family: "Poppins-Regular";
+  color: #eee;
+  padding-inline: 2.5rem;
+}
 /* footer */
 footer h2 {
   font-size: 0.8125rem;
