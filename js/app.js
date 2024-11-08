@@ -25,41 +25,41 @@ console.log(allZoomIcons);
 
 // ------------------------------------portfolio sliders effect----------------------------
 // general function of portfolio tabs images
-function tabsImagesEffect(zoomIcons, sliderImages) {
-  zoomIcons.forEach(tabTypeCallback);
-  function tabTypeCallback(zoomIcon) {
-    sliderImages.forEach(sliderCallback);
-    function sliderCallback(sliderImage) {
-      zoomIcon.addEventListener("click", (e) => {
-        // test here
-        let cardImage = zoomIcon.parentElement.parentElement.parentElement.previousElementSibling.querySelector("img");
-        if (cardImage.src === sliderImage.src) {
-          sliderImage.parentElement.parentElement.classList.add("active");
-        }
-        console.log(zoomIcon.parentElement.parentElement.parentElement.previousElementSibling.querySelector("img"), "cardImage");
+// function tabsImagesEffect(zoomIcons, sliderImages) {
+//   zoomIcons.forEach(tabTypeCallback);
+//   function tabTypeCallback(zoomIcon) {
+//     sliderImages.forEach(sliderCallback);
+//     function sliderCallback(sliderImage) {
+//       zoomIcon.addEventListener("click", (e) => {
+//         // test here
+//         let cardImage = zoomIcon.parentElement.parentElement.parentElement.previousElementSibling.querySelector("img");
+//         if (cardImage.src === sliderImage.src) {
+//           sliderImage.parentElement.parentElement.classList.add("active");
+//         }
+//         console.log(zoomIcon.parentElement.parentElement.parentElement.previousElementSibling.querySelector("img"), "cardImage");
         
-      });
-    }
-  }
-}
+//       });
+//     }
+//   }
+// }
 
 // clicking portfolio image to show slider
-(function portfolioImagesEffect() {
-  tabsImagesEffect(allZoomIcons, sliderImages);
-})();
+// (function portfolioImagesEffect() {
+//   tabsImagesEffect(allZoomIcons, sliderImages);
+// })();
 
 // remove active class when closing the slider
-function removeActiveClass(sliderImages) {
-  sliderImages.forEach((sliderImage) => {
-    sliderImage.parentElement.parentElement.classList.remove("active");
-  });
-}
+// function removeActiveClass(sliderImages) {
+//   sliderImages.forEach((sliderImage) => {
+//     sliderImage.parentElement.parentElement.classList.remove("active");
+//   });
+// }
 
 // closing slider effect
-(function sliderCloseEffect() {
-  portfolioSlider.addEventListener("transitionend", () => {
-    if (!portfolioSlider.classList.contains("show")) {
-      removeActiveClass(sliderImages);
-    }
-  });
-})();
+// (function sliderCloseEffect() {
+//   portfolioSlider.addEventListener("transitionend", () => {
+//     if (!portfolioSlider.classList.contains("show")) {
+//       removeActiveClass(sliderImages);
+//     }
+//   });
+// })();

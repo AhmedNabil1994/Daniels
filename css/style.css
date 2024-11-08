@@ -267,36 +267,52 @@ section#services article:hover .fa-stack i:last-child {
 /* ------------------------------------Portfolio------------------------------------ */
 section#portfolio {
   scroll-margin-top: 3.25rem;
-  .slider {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.92));
-    span.close-icon {
-      position: absolute;
-      top: 0;
-      right: 5%;
-      color: white;
-      font-size: 2.8rem;
-    }
-    .carousel {
-      .carousel-inner {
-        overflow: visible;
-        img {
-          cursor: zoom-in;
-          &:active {
-            cursor: grab;
-            transform: scale(1.05);
-          }
-        }
-      }
-      button {
-        span {
-          background-color: var(--main-color);
-          padding: 1.25rem 0.625rem;
-          border-radius: 0.3125rem;
-        }
-      }
-    }
-  }
 }
+/* slider */
+section#portfolio .slider {
+  background-color: #0b0b0b;
+  opacity: 0.9;
+}
+section#portfolio .slider span.close-icon {
+  position: absolute;
+  top: -3.125rem;
+  right: -1rem;
+  color: white;
+  font-size: 2rem;
+}
+section#portfolio .slider .carousel .carousel-inner {
+  overflow: visible;
+}
+section#portfolio .slider .carousel .carousel-inner .carousel-item {
+  position: relative;
+}
+section#portfolio .slider .carousel .carousel-inner .carousel-item span {
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  color: #ccc;
+  font-size: 14px;
+}
+section#portfolio .slider .carousel .carousel-inner img {
+  cursor: zoom-in;
+}
+section#portfolio .slider .carousel .carousel-inner img:active {
+  cursor: grab;
+  transform: scale(1.05);
+}
+.carousel-control-next,
+.carousel-control-prev {
+  opacity: 1;
+}
+section#portfolio .slider .carousel button span {
+  background-color: gray;
+  padding: 1.25rem 0.625rem;
+  border-radius: 0.3125rem;
+}
+section#portfolio .slider img {
+  width: 100%;
+}
+/* end slider */
 section#portfolio .cards ul.nav-pills button {
   color: #222;
   font-size: 1rem;
@@ -552,5 +568,37 @@ footer h2 {
   header#home h1 {
     font-size: 1.875rem;
     font-family: "Montserrat-ExtraLight";
+  }
+}
+
+/* md */
+@media screen and (min-width: 768px) {
+  /* slider */
+  .slider .modal-dialog {
+    --bs-modal-width: 650px;
+  }
+  section#portfolio .slider img {
+    height: 500px;
+  }
+}
+/* lg and higher */
+@media screen and (min-width: 992px) {
+  /* slider */
+  .slider .modal-dialog {
+    --bs-modal-width: 800px;
+  }
+}
+
+/* xl and higher */
+@media screen and (min-width: 1200px) {
+  header#home,
+  section#statistics,
+  section#testimonial,
+  section#contact {
+    background-attachment: fixed;
+  }
+  /* slider */
+  .slider .modal-dialog {
+    --bs-modal-width: 880px;
   }
 }
