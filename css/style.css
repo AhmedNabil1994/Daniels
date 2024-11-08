@@ -28,6 +28,7 @@
   font-family: "Montserrat-Black";
   src: url("../fonts/Montserrat-Black.ttf");
 }
+
 /* Poppins */
 @font-face {
   font-family: "Poppins-Regular";
@@ -53,7 +54,8 @@
   font-family: "Poppins-Black";
   src: url("../fonts/Poppins-Black.ttf");
 }
-/* shared classes */
+
+/* ------------------------------------shared classes------------------------------------ */
 .section-title {
   color: #343434;
   font-size: 2.5rem;
@@ -75,7 +77,8 @@
   z-index: -1;
   bottom: -5px;
 }
-/* Navbar */
+
+/* ------------------------------------Navbar------------------------------------ */
 nav {
   /* background-color: rgba(0, 0, 0, 0.9); */
 }
@@ -130,7 +133,7 @@ nav ul.navbar-nav li {
   transform: scaleX(1);
 }
 
-/* Header */
+/* ------------------------------------Header------------------------------------ */
 header#home {
   height: 100vh;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -161,7 +164,8 @@ header#home .fa-stack i:last-child {
   font-size: 13px;
   color: white;
 }
-/* about */
+
+/* ------------------------------------About------------------------------------ */
 section#about .left .picture::after {
   content: "";
   background-image: url("../images/webp_images/dots.webp"),
@@ -223,7 +227,8 @@ section#about .right .buttons button:last-child:hover {
   color: white;
   background-color: rgb(33, 37, 41);
 }
-/* services */
+
+/* ------------------------------------Services------------------------------------ */
 section#services {
   scroll-margin-top: 3.25rem;
 }
@@ -258,7 +263,111 @@ section#services article:hover .fa-stack i:first-child {
 section#services article:hover .fa-stack i:last-child {
   color: white;
 }
-/* testimonial */
+
+/* ------------------------------------Portfolio------------------------------------ */
+section#portfolio {
+  scroll-margin-top: 3.25rem;
+  .slider {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.92));
+    span.close-icon {
+      position: absolute;
+      top: 0;
+      right: 5%;
+      color: white;
+      font-size: 2.8rem;
+    }
+    .carousel {
+      .carousel-inner {
+        overflow: visible;
+        img {
+          cursor: zoom-in;
+          &:active {
+            cursor: grab;
+            transform: scale(1.05);
+          }
+        }
+      }
+      button {
+        span {
+          background-color: var(--main-color);
+          padding: 1.25rem 0.625rem;
+          border-radius: 0.3125rem;
+        }
+      }
+    }
+  }
+}
+section#portfolio .cards ul.nav-pills button {
+  color: #222;
+  font-size: 1rem;
+  font-family: "Poppins-Bold";
+  position: relative;
+}
+section#portfolio .cards ul.nav-pills button::after {
+  content: "";
+  position: absolute;
+  bottom: 15%;
+  left: 0.3125rem;
+  right: 0.3125rem;
+  height: 2px;
+  background-color: black;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+section#portfolio .cards ul.nav-pills button.active {
+  background-color: transparent;
+}
+section#portfolio .cards ul.nav-pills button.active::after {
+  transform: scaleX(1);
+}
+section#portfolio article.card .links {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  margin: 0.1875rem;
+  opacity: 0;
+  transition: opacity 0.7s;
+}
+section#portfolio article.card:hover .links {
+  opacity: 1;
+}
+section#portfolio article.card .links h3 {
+  color: #343434;
+  font-size: 0.75rem;
+  font-family: "Montserrat-Bold";
+  letter-spacing: 0.125rem;
+}
+section#portfolio article.card .icons {
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+section#portfolio .icons a {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: black;
+  transition: all 0.5s;
+}
+section#portfolio .icons a:hover {
+  background-color: white;
+}
+section#portfolio .icons a i {
+  transition: inherit;
+  color: white;
+  font-size: 13px;
+}
+section#portfolio .links a:hover i {
+  color: black;
+}
+
+/* ------------------------------------Testimonial------------------------------------ */
 section#testimonial {
   scroll-margin-top: 3.25rem;
 }
@@ -297,7 +406,7 @@ section#testimonial .carousel-item .content h4 {
   opacity: 1;
 }
 
-/* stats */
+/* ------------------------------------Stats------------------------------------ */
 section#stats .box i {
   font-size: 1.875rem;
 }
@@ -312,7 +421,7 @@ section#stats .box h2 {
   font-family: "Poppins-SemiBold";
 }
 
-/* team */
+/* ------------------------------------Team------------------------------------ */
 section#team {
   scroll-margin-top: 3.25rem;
 }
@@ -365,7 +474,8 @@ section#team .card-body h3 {
   font-size: 1.25rem;
   font-family: "Montserrat-Bold";
 }
-/* contact */
+
+/* ------------------------------------Contact------------------------------------ */
 section#contact header {
   margin-bottom: 3.125rem;
 }
@@ -394,8 +504,8 @@ section#contact form textarea {
   font-family: "Poppins-Regular";
 }
 section#contact form textarea {
- height: 10rem;
- max-height: 10rem;
+  height: 10rem;
+  max-height: 10rem;
 }
 .form-control:focus {
   box-shadow: none;
@@ -409,7 +519,8 @@ section#contact form button {
   color: #eee;
   padding-inline: 2.5rem;
 }
-/* footer */
+
+/* ------------------------------------Footer------------------------------------ */
 footer {
   padding-block: 1.875rem;
   background-color: #1c1c1c;
