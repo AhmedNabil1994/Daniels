@@ -23,23 +23,19 @@ const allZoomIcons = document.querySelectorAll(".navs-tabs .fa-search-plus");
 
 // ------------------------------------portfolio sliders effect----------------------------
 // general function of portfolio tabs images
-function tabsImagesEffect(zoomIcons, sliderImages) {
-  zoomIcons.forEach(zoomIcon => {
-    sliderImages.forEach(sliderImage => {
-      zoomIcon.addEventListener("click", (e) => {
-        const correspondingCardImage = zoomIcon.parentElement.parentElement.parentElement.previousElementSibling.querySelector("img");
-        if (correspondingCardImage.src === sliderImage.src) {
-          sliderImage.parentElement.parentElement.classList.add("active");
-        }
-      });
-    });
+allZoomIcons.forEach((zoomIcon) => {
+  sliderImages.forEach((sliderImage) => {
+    zoomIcon.addEventListener("click", (e) => test(e, sliderImage));
   });
+});
+function test(e, sliderImage) {
+  console.log("hello");
+  const correspondingCardImage = e.target.closest(".card").querySelector("img");
+  if (correspondingCardImage.src === sliderImage.src) {
+    sliderImage.parentElement.parentElement.classList.add("active");
+  }
 }
-
 // clicking portfolio image to show slider
-(function portfolioImagesEffect() {
-  tabsImagesEffect(allZoomIcons, sliderImages);
-})();
 
 // remove active class when closing the slider
 function removeActiveClass(sliderImages) {
@@ -53,6 +49,7 @@ function removeActiveClass(sliderImages) {
   portfolioSlider.addEventListener("transitionend", () => {
     if (!portfolioSlider.classList.contains("show")) {
       removeActiveClass(sliderImages);
+      console.log("classes removed");
     }
   });
 })();
@@ -82,4 +79,3 @@ function removeActiveClass(sliderImages) {
     });
   });
 })();
-
