@@ -471,6 +471,9 @@ section#testimonial .carousel-item .content h4 {
 }
 
 /* ------------------------------------Stats------------------------------------ */
+section#stats {
+  scroll-margin-top: 3.25rem;
+}
 section#stats .box i {
   font-size: 1.875rem;
 }

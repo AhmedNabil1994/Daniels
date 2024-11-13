@@ -8,6 +8,12 @@ const portfolioSlider = document.querySelector(".slider");
 const sliderImages = document.querySelectorAll("#portfolioModal img");
 // nav and tabs zoom icons in portfolio
 const allZoomIcons = document.querySelectorAll(".navs-tabs .fa-search-plus");
+// test
+const modal = document.getElementById("portfolioModal");
+const closeIcon = document.querySelector(".close-icon");
+const statsAnchor = document.querySelector('a[href="#stats"]');
+const statNumbers = document.querySelectorAll(".stat-number");
+console.log(statNumbers);
 
 // ------------------------------------home typing animation----------------------------
 (function typingAnimation() {
@@ -23,19 +29,38 @@ const allZoomIcons = document.querySelectorAll(".navs-tabs .fa-search-plus");
 
 // ------------------------------------portfolio sliders effect----------------------------
 // general function of portfolio tabs images
+// allZoomIcons.forEach((zoomIcon) => {
+//   sliderImages.forEach((sliderImage) => {
+//     zoomIcon.addEventListener("click", (e) => sliderEffect(e, sliderImage));
+//   });
+// });
+
+// function sliderEffect(e, sliderImage) {
+//   const correspondingCardImage = e.target.closest(".card").querySelector("img");
+//   if (correspondingCardImage.src === sliderImage.src) {
+//     sliderImage.parentElement.parentElement.classList.add("active");
+//   }
+// }
+
+// (function addActiveClass() {
+// })();
+
 allZoomIcons.forEach((zoomIcon) => {
-  sliderImages.forEach((sliderImage) => {
-    zoomIcon.addEventListener("click", (e) => test(e, sliderImage));
+  zoomIcon.addEventListener("click", (e) => {
+    const currentImage = e.target.closest(".card").querySelector("img");
+    sliderImages.forEach((sliderImage) => {
+      console.log(sliderImage.dataset.src, "slider image src");
+      console.log(currentImage.dataset.src, "current image src");
+      if (sliderImage.dataset.src === currentImage.dataset.src) {
+        sliderImage.parentElement.parentElement.classList.add("active");
+        console.log("add active class fn");
+      }
+    });
   });
 });
-function test(e, sliderImage) {
-  console.log("hello");
-  const correspondingCardImage = e.target.closest(".card").querySelector("img");
-  if (correspondingCardImage.src === sliderImage.src) {
-    sliderImage.parentElement.parentElement.classList.add("active");
-  }
-}
-// clicking portfolio image to show slider
+
+
+
 
 // remove active class when closing the slider
 function removeActiveClass(sliderImages) {
@@ -45,14 +70,21 @@ function removeActiveClass(sliderImages) {
 }
 
 // closing slider effect
-(function sliderCloseEffect() {
-  portfolioSlider.addEventListener("transitionend", () => {
-    if (!portfolioSlider.classList.contains("show")) {
-      removeActiveClass(sliderImages);
-      console.log("classes removed");
-    }
-  });
-})();
+// (function sliderCloseEffect() {
+// })();
+portfolioSlider.addEventListener("transitionend", () => {
+  console.log("transition happened");
+  if (!portfolioSlider.classList.contains("show")) {
+    console.log(
+      !portfolioSlider.classList.contains("show"),
+      "no show class status inside if"
+    );
+    removeActiveClass(sliderImages);
+    console.log("remove active class fn");
+  } else {
+    console.log("give false value");
+  }
+});
 
 // ------------------------------------mobile nav effect----------------------------
 // nav link logic (clicking the link closes the menu and scroll)
@@ -79,3 +111,29 @@ function removeActiveClass(sliderImages) {
     });
   });
 })();
+
+// ------------------------------------Stats Counter Animation----------------------------
+document.addEventListener("DOMContentLoaded", function () {
+  let statsAnimated = true;
+  function animateNumbers() {
+    statNumbers.forEach((num) => {
+      const target = +num.getAttribute("data-target");
+      const inc = target / 100;
+      (function updateNumber() {
+        const current = +num.innerText;
+        if (current < target) {
+          num.innerText = Math.ceil(current + inc);
+          setTimeout(updateNumber, 15);
+        } else {
+          num.innerText = target;
+        }
+      })();
+    });
+  }
+  document.addEventListener("scroll", function () {
+    if (statsAnchor.classList.contains("active") && statsAnimated) {
+      animateNumbers();
+      statsAnimated = false;
+    }
+  });
+});
