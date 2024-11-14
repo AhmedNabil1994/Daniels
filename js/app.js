@@ -8,12 +8,13 @@ const portfolioSlider = document.querySelector(".slider");
 const sliderImages = document.querySelectorAll("#portfolioModal img");
 // nav and tabs zoom icons in portfolio
 const allZoomIcons = document.querySelectorAll(".navs-tabs .fa-search-plus");
-// test
 const modal = document.getElementById("portfolioModal");
 const closeIcon = document.querySelector(".close-icon");
+// progress and counter animation
 const statsAnchor = document.querySelector('a[href="#stats"]');
 const statNumbers = document.querySelectorAll(".stat-number");
-console.log(statNumbers);
+const aboutAnchor = document.querySelector('a[href="#about"]');
+const widthBars = document.querySelectorAll(".width-bar");
 
 // ------------------------------------home typing animation----------------------------
 (function typingAnimation() {
@@ -58,9 +59,6 @@ allZoomIcons.forEach((zoomIcon) => {
     });
   });
 });
-
-
-
 
 // remove active class when closing the slider
 function removeActiveClass(sliderImages) {
@@ -133,6 +131,38 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("scroll", function () {
     if (statsAnchor.classList.contains("active") && statsAnimated) {
       animateNumbers();
+      statsAnimated = false;
+    }
+  });
+});
+
+
+// ------------------------------------Progress Skils Animation----------------------------
+document.addEventListener("DOMContentLoaded", function () {
+  let statsAnimated = true;
+  function animateBars() {
+    widthBars.forEach((bar) => {
+      const target = +bar.getAttribute("data-target");
+      const inc = target / 5;
+      let widthProperty = bar.style.width;
+      (function updateBar() {
+        let width = parseInt(widthProperty);
+        if (width < target) {
+          width = Math.ceil(width + inc);
+          widthProperty = width + "%";
+          bar.style.width = widthProperty;
+          let totalWidth = 15 + target;
+          bar.innerHTML = totalWidth + "%";
+          setTimeout(updateNumber, 5);
+        } else {
+          bar.style.width = target + "%";
+        }
+      })();
+    });
+  }
+  document.addEventListener("scroll", function () {
+    if (aboutAnchor.classList.contains("active") && statsAnimated) {
+      animateBars();
       statsAnimated = false;
     }
   });

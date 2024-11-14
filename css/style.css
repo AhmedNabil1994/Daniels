@@ -284,9 +284,7 @@ section#about .right .buttons button:last-child:hover {
 }
 
 /* ------------------------------------Services------------------------------------ */
-section#services {
-  scroll-margin-top: 3.25rem;
-}
+
 section#services article {
   background-color: var(--white-color);
   box-shadow: 1px 0px 2px 2px #80808012;
@@ -320,9 +318,7 @@ section#services article:hover .fa-stack i:last-child {
 }
 
 /* ------------------------------------Portfolio------------------------------------ */
-section#portfolio {
-  scroll-margin-top: 3.25rem;
-}
+
 /* slider */
 section#portfolio .slider {
   background-color: #0b0b0b;
@@ -432,9 +428,7 @@ section#portfolio .links a:hover i {
 }
 
 /* ------------------------------------Testimonial------------------------------------ */
-section#testimonial {
-  scroll-margin-top: 3.25rem;
-}
+
 .carousel {
   position: static;
 }
@@ -471,9 +465,7 @@ section#testimonial .carousel-item .content h4 {
 }
 
 /* ------------------------------------Stats------------------------------------ */
-section#stats {
-  scroll-margin-top: 3.25rem;
-}
+
 section#stats .box i {
   font-size: 1.875rem;
 }
@@ -489,9 +481,7 @@ section#stats .box h2 {
 }
 
 /* ------------------------------------Team------------------------------------ */
-section#team {
-  scroll-margin-top: 3.25rem;
-}
+
 section#team article.card:hover .links {
   transform: rotateY(0) scale(1, 1);
   opacity: 0.95;
