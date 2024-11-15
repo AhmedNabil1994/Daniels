@@ -64,6 +64,9 @@
   --white-color: white;
   --black-color: black;
 }
+html {
+  scroll-padding-top: 4.3125rem;
+}
 .section-title {
   color: var(--color-2);
   font-size: 2.5rem;
@@ -466,6 +469,10 @@ section#testimonial .carousel-item .content h4 {
 
 /* ------------------------------------Stats------------------------------------ */
 
+section#stats  {
+  padding-top: 6.25rem;
+  padding-bottom: 4.375rem;
+}
 section#stats .box i {
   font-size: 1.875rem;
 }

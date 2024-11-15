@@ -50,11 +50,11 @@ allZoomIcons.forEach((zoomIcon) => {
   zoomIcon.addEventListener("click", (e) => {
     const currentImage = e.target.closest(".card").querySelector("img");
     sliderImages.forEach((sliderImage) => {
-      console.log(sliderImage.dataset.src, "slider image src");
-      console.log(currentImage.dataset.src, "current image src");
+      // console.log(sliderImage.dataset.src, "slider image src");
+      // console.log(currentImage.dataset.src, "current image src");
       if (sliderImage.dataset.src === currentImage.dataset.src) {
         sliderImage.parentElement.parentElement.classList.add("active");
-        console.log("add active class fn");
+        // console.log("add active class fn");
       }
     });
   });
@@ -71,16 +71,16 @@ function removeActiveClass(sliderImages) {
 // (function sliderCloseEffect() {
 // })();
 portfolioSlider.addEventListener("transitionend", () => {
-  console.log("transition happened");
+  // console.log("transition happened");
   if (!portfolioSlider.classList.contains("show")) {
-    console.log(
-      !portfolioSlider.classList.contains("show"),
-      "no show class status inside if"
-    );
+    // console.log(
+    //   !portfolioSlider.classList.contains("show"),
+    //   "no show class status inside if"
+    // );
     removeActiveClass(sliderImages);
-    console.log("remove active class fn");
+    // console.log("remove active class fn");
   } else {
-    console.log("give false value");
+    // console.log("give false value");
   }
 });
 
@@ -136,14 +136,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
 // ------------------------------------Progress Skils Animation----------------------------
 document.addEventListener("DOMContentLoaded", function () {
-  let statsAnimated = true;
+  let barsAnimated = true;
   function animateBars() {
     widthBars.forEach((bar) => {
       const target = +bar.getAttribute("data-target");
-      const inc = target / 5;
+      const inc = target / 10;
       let widthProperty = bar.style.width;
       (function updateBar() {
         let width = parseInt(widthProperty);
@@ -153,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
           bar.style.width = widthProperty;
           let totalWidth = 15 + target;
           bar.innerHTML = totalWidth + "%";
-          setTimeout(updateNumber, 5);
+          setTimeout(updateBar, 10);
         } else {
           bar.style.width = target + "%";
         }
@@ -161,9 +160,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   document.addEventListener("scroll", function () {
-    if (aboutAnchor.classList.contains("active") && statsAnimated) {
+    if (aboutAnchor.classList.contains("active") && barsAnimated) {
       animateBars();
-      statsAnimated = false;
+      barsAnimated = false;
     }
   });
 });
