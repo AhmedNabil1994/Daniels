@@ -180,9 +180,9 @@ nav ul.navbar-nav li {
 .navbar-nav .nav-link span::after {
   background-color: var(--white-color);
   transition: transform 0.7s;
-  left: .4375rem;
-  right: .4375rem;
-  bottom: .4375rem;
+  left: 0.4375rem;
+  right: 0.4375rem;
+  bottom: 0.4375rem;
 }
 .navbar-nav .nav-link.active span::after {
   transform: scaleX(1);
@@ -260,13 +260,18 @@ section#about .right .skills .progress {
   margin-bottom: 30px;
   box-shadow: inset 0px 1px 5px 0px #00000026;
 }
-section#about .right .skills .progress-bar:last-child {
+section#about .right .skills .progress .progress-bar {
+  color: white;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   border-top-right-radius: inherit;
   border-bottom-right-radius: inherit;
 }
-section#about .right .skills .progress .progress-bar:first-child {
+section#about .right .skills .progress .progress-bar h4 {
   font-size: 13px;
   font-family: "Montserrat-Medium";
+  margin-bottom: 0;
 }
 section#about .right .buttons {
   font-family: "Poppins-Regular";
@@ -382,7 +387,7 @@ section#portfolio .cards ul.nav-pills button span::after {
   transition: transform 0.3s;
   left: 0.9375rem;
   right: 0.9375rem;
-  bottom: .625rem;
+  bottom: 0.625rem;
 }
 section#portfolio .cards ul.nav-pills button.active {
   background-color: transparent;
@@ -607,6 +612,9 @@ footer h2 {
 /* ------------------------------------Media------------------------------------ */
 /* lower md */
 @media screen and (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
   /* Navbar */
   ul.navbar-nav {
     background-color: var(--white-color);
@@ -668,5 +676,14 @@ footer h2 {
   /* slider */
   .slider .modal-dialog {
     --bs-modal-width: 880px;
+  }
+}
+
+/* special sizes */
+@media screen and (max-width: 335px) {
+  section#about .right .buttons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.625rem;
   }
 }

@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function animateBars() {
     widthBars.forEach((bar) => {
       const target = +bar.getAttribute("data-target");
-      const inc = target / 10;
+      const inc = target / 5;
       let widthProperty = bar.style.width;
       (function updateBar() {
         let width = parseInt(widthProperty);
@@ -150,9 +150,8 @@ document.addEventListener("DOMContentLoaded", function () {
           width = Math.ceil(width + inc);
           widthProperty = width + "%";
           bar.style.width = widthProperty;
-          let totalWidth = 15 + target;
-          bar.innerHTML = totalWidth + "%";
-          setTimeout(updateBar, 10);
+          bar.querySelector("span").innerText = target + "%";
+          setTimeout(updateBar, 50);
         } else {
           bar.style.width = target + "%";
         }
