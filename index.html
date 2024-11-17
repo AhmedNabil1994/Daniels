@@ -20,10 +20,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   </head>
-  <body
-    data-bs-spy="scroll"
-    data-bs-target="#navbar"
-    >
+  <body data-bs-spy="scroll" data-bs-target="#navbar">
     <!-- data-bs-root-margin="0px 0px -80%" -->
     <!-- start nav -->
     <nav id="navbar" class="navbar navbar-expand-md pt-4 .navbar-home">
@@ -47,28 +44,44 @@
             class="navbar-nav ms-auto mb-2 mb-lg-0 text-capitalize align-items-center"
           >
             <li class="nav-item link">
-              <a class="nav-link active-line" href="#home">home</a>
+              <a class="nav-link" href="#home"
+                ><span class="active-line">home</span></a
+              >
             </li>
             <li class="nav-item link">
-              <a class="nav-link active-line" href="#about">about</a>
+              <a class="nav-link" href="#about"
+                ><span class="active-line">about</span></a
+              >
             </li>
             <li class="nav-item link">
-              <a class="nav-link active-line" href="#services">services </a>
+              <a class="nav-link" href="#services"
+                ><span class="active-line">services</span>
+              </a>
             </li>
             <li class="nav-item link">
-              <a class="nav-link active-line" href="#portfolio">works</a>
+              <a class="nav-link" href="#portfolio"
+                ><span class="active-line">works</span></a
+              >
             </li>
             <li class="nav-item link">
-              <a class="nav-link active-line" href="#testimonial">clients</a>
+              <a class="nav-link" href="#testimonial"
+                ><span class="active-line">clients</span></a
+              >
             </li>
             <li class="nav-item link">
-              <a class="nav-link active-line" href="#stats">stats</a>
+              <a class="nav-link" href="#stats"
+                ><span class="active-line">stats</span></a
+              >
             </li>
             <li class="nav-item link">
-              <a class="nav-link active-line" href="#team">team</a>
+              <a class="nav-link" href="#team"
+                ><span class="active-line">team</span></a
+              >
             </li>
             <li class="nav-item link">
-              <a class="nav-link active-line" href="#contact">contact</a>
+              <a class="nav-link" href="#contact"
+                ><span class="active-line">contact</span></a
+              >
             </li>
           </ul>
         </div>
@@ -211,15 +224,16 @@
                   </div>
                 </div>
                 <div class="buttons">
-                  <button type="button" class="px-4 btn btn-dark">
+                  <a href="#0" type="button" class="px-4 btn btn-dark" download>
                     Download C.V
-                  </button>
-                  <button
+                  </a>
+                  <a
+                    href="#contact"
                     type="button"
                     class="px-4 btn btn-light border border-dark"
                   >
                     Contact Me
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -333,7 +347,7 @@
             <!-- all tab -->
             <li class="nav-item ms-2" role="presentation">
               <button
-                class="nav-link active active-line"
+                class="nav-link active"
                 id="pills-all-tab"
                 data-bs-toggle="pill"
                 data-bs-target="#pills-all"
@@ -342,7 +356,7 @@
                 aria-controls="pills-all"
                 aria-selected="true"
               >
-                All
+                <span class="active-line" class="active-line"> All </span>
               </button>
             </li>
             <!-- brand tab -->
@@ -357,7 +371,7 @@
                 aria-controls="pills-brand"
                 aria-selected="true"
               >
-                Brand
+                <span class="active-line"> Brand </span>
               </button>
             </li>
             <!-- design tab -->
@@ -372,7 +386,7 @@
                 aria-controls="pills-design"
                 aria-selected="true"
               >
-                Design
+                <span class="active-line"> Design </span>
               </button>
             </li>
             <!-- graphic tab -->
@@ -387,7 +401,7 @@
                 aria-controls="pills-graphic"
                 aria-selected="true"
               >
-                Graphic
+                <span class="active-line"> Graphic </span>
               </button>
             </li>
           </ul>
@@ -1406,7 +1420,6 @@
         <header>
           <h2 class="section-title">Contact Us.</h2>
         </header>
-        <div class="content px-5"></div>
         <div class="container">
           <div class="row gy-5">
             <div class="col-md-6 col-lg-4">

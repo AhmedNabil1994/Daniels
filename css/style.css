@@ -65,7 +65,7 @@
   --black-color: black;
 }
 html {
-  scroll-padding-top: 4.3125rem;
+  /* scroll-padding-top: 4.3125rem; */
 }
 .section-title {
   color: var(--color-2);
@@ -91,8 +91,6 @@ html {
 .active-line::after {
   content: "";
   position: absolute;
-  left: 0.3125rem;
-  right: 0.3125rem;
   height: 2px;
   transform: scaleX(0);
   transform-origin: left;
@@ -179,15 +177,17 @@ nav ul.navbar-nav li {
 .navbar-scrolled .navbar-nav .nav-link.show {
   color: var(--color-3);
 }
-.navbar-nav .nav-link::after {
-  bottom: 0px;
+.navbar-nav .nav-link span::after {
   background-color: var(--white-color);
   transition: transform 0.7s;
+  left: .4375rem;
+  right: .4375rem;
+  bottom: .4375rem;
 }
-.navbar-nav .nav-link.active::after {
+.navbar-nav .nav-link.active span::after {
   transform: scaleX(1);
 }
-.navbar-scrolled .navbar-nav .nav-link::after {
+.navbar-scrolled .navbar-nav .nav-link span::after {
   background-color: var(--color-3);
 }
 
@@ -260,6 +260,10 @@ section#about .right .skills .progress {
   margin-bottom: 30px;
   box-shadow: inset 0px 1px 5px 0px #00000026;
 }
+section#about .right .skills .progress-bar:last-child {
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
 section#about .right .skills .progress .progress-bar:first-child {
   font-size: 13px;
   font-family: "Montserrat-Medium";
@@ -267,21 +271,21 @@ section#about .right .skills .progress .progress-bar:first-child {
 section#about .right .buttons {
   font-family: "Poppins-Regular";
 }
-section#about .right .buttons button {
+section#about .right .buttons a {
   font-size: 0.8125rem;
   transition: all 0.7s;
 }
-section#about .right .buttons button:first-child {
+section#about .right .buttons a:first-child {
   color: #eee;
 }
-section#about .right .buttons button:first-child:hover {
+section#about .right .buttons a:first-child:hover {
   color: rgb(52, 52, 52);
   background-color: #fff;
 }
-section#about .right .buttons button:last-child {
+section#about .right .buttons a:last-child {
   color: rgb(52, 52, 52);
 }
-section#about .right .buttons button:last-child:hover {
+section#about .right .buttons a:last-child:hover {
   color: var(--white-color);
   background-color: rgb(33, 37, 41);
 }
@@ -373,15 +377,17 @@ section#portfolio .cards ul.nav-pills button {
   font-family: "Poppins-Bold";
   position: relative;
 }
-section#portfolio .cards ul.nav-pills button::after {
-  bottom: 15%;
+section#portfolio .cards ul.nav-pills button span::after {
   background-color: var(--black-color);
   transition: transform 0.3s;
+  left: 0.9375rem;
+  right: 0.9375rem;
+  bottom: .625rem;
 }
 section#portfolio .cards ul.nav-pills button.active {
   background-color: transparent;
 }
-section#portfolio .cards ul.nav-pills button.active::after {
+section#portfolio .cards ul.nav-pills button.active span::after {
   transform: scaleX(1);
 }
 section#portfolio article.card .links {
@@ -469,7 +475,7 @@ section#testimonial .carousel-item .content h4 {
 
 /* ------------------------------------Stats------------------------------------ */
 
-section#stats  {
+section#stats {
   padding-top: 6.25rem;
   padding-bottom: 4.375rem;
 }
@@ -519,14 +525,11 @@ section#team .links a {
   border: 1px solid var(--black-color);
   border-radius: 50%;
   background-color: var(--black-color);
-  transition: all 0.5s;
 }
 section#team .links a:hover {
   background-color: var(--white-color);
 }
-section#team .links a i {
-  transition: inherit;
-}
+
 section#team .links a:hover i {
   color: var(--black-color);
 }
@@ -582,6 +585,11 @@ section#contact form button {
   font-family: "Poppins-Regular";
   color: #eee;
   padding-inline: 2.5rem;
+  transition: all 0.5s;
+}
+section#contact form button:hover {
+  background-color: #eee;
+  color: var(--color-3);
 }
 
 /* ------------------------------------Footer------------------------------------ */
@@ -618,9 +626,11 @@ footer h2 {
   .navbar-nav .nav-link.show {
     color: var(--color-3);
   }
-  .navbar-nav .nav-link::after {
+  .navbar-nav .nav-link span::after {
     background-color: var(--color-3);
     transition-duration: 0.3s;
+    left: 0;
+    right: 0;
   }
   /* header */
   header#home h1 {
