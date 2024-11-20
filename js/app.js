@@ -30,20 +30,6 @@ const widthBars = document.querySelectorAll(".width-bar");
 
 // ------------------------------------portfolio sliders effect----------------------------
 
-/* allZoomIcons.forEach((zoomIcon) => {
-  zoomIcon.parentElement.addEventListener("click", (e) => {
-    const src = e.target.dataset.src ?? e.target.children[0].dataset.src;
-    sliderImages.forEach((sliderImage) => {
-      if (sliderImage.dataset.src === src) {
-        sliderImage.parentElement.parentElement.classList.add("active");
-      } else {
-        sliderImage.parentElement.parentElement.classList.remove("active");
-      }
-    });
-  });
-}); */
-
-// test
 allZoomIcons.forEach((zoomIcon) => {
   zoomIcon.parentElement.addEventListener("click", (e) => {
     console.log(e.target.dataset.src);
