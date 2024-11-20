@@ -29,59 +29,32 @@ const widthBars = document.querySelectorAll(".width-bar");
 })();
 
 // ------------------------------------portfolio sliders effect----------------------------
-// general function of portfolio tabs images
-// allZoomIcons.forEach((zoomIcon) => {
-//   sliderImages.forEach((sliderImage) => {
-//     zoomIcon.addEventListener("click", (e) => sliderEffect(e, sliderImage));
-//   });
-// });
 
-// function sliderEffect(e, sliderImage) {
-//   const correspondingCardImage = e.target.closest(".card").querySelector("img");
-//   if (correspondingCardImage.src === sliderImage.src) {
-//     sliderImage.parentElement.parentElement.classList.add("active");
-//   }
-// }
-
-// (function addActiveClass() {
-// })();
-
-allZoomIcons.forEach((zoomIcon) => {
-  zoomIcon.addEventListener("click", (e) => {
-    const currentImage = e.target.closest(".card").querySelector("img");
+/* allZoomIcons.forEach((zoomIcon) => {
+  zoomIcon.parentElement.addEventListener("click", (e) => {
+    const src = e.target.dataset.src ?? e.target.children[0].dataset.src;
     sliderImages.forEach((sliderImage) => {
-      // console.log(sliderImage.dataset.src, "slider image src");
-      // console.log(currentImage.dataset.src, "current image src");
-      if (sliderImage.dataset.src === currentImage.dataset.src) {
+      if (sliderImage.dataset.src === src) {
         sliderImage.parentElement.parentElement.classList.add("active");
-        // console.log("add active class fn");
+      } else {
+        sliderImage.parentElement.parentElement.classList.remove("active");
       }
     });
   });
-});
+}); */
 
-// remove active class when closing the slider
-function removeActiveClass(sliderImages) {
-  sliderImages.forEach((sliderImage) => {
-    sliderImage.parentElement.parentElement.classList.remove("active");
+// test
+allZoomIcons.forEach((zoomIcon) => {
+  zoomIcon.parentElement.addEventListener("click", (e) => {
+    console.log(e.target.dataset.src);
+    sliderImages.forEach((sliderImage) => {
+      if (sliderImage.dataset.src === e.target.dataset.src) {
+        sliderImage.parentElement.parentElement.classList.add("active");
+      } else {
+        sliderImage.parentElement.parentElement.classList.remove("active");
+      }
+    });
   });
-}
-
-// closing slider effect
-// (function sliderCloseEffect() {
-// })();
-portfolioSlider.addEventListener("transitionend", () => {
-  // console.log("transition happened");
-  if (!portfolioSlider.classList.contains("show")) {
-    // console.log(
-    //   !portfolioSlider.classList.contains("show"),
-    //   "no show class status inside if"
-    // );
-    removeActiveClass(sliderImages);
-    // console.log("remove active class fn");
-  } else {
-    // console.log("give false value");
-  }
 });
 
 // ------------------------------------mobile nav effect----------------------------
