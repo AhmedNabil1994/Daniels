@@ -29,10 +29,8 @@ const widthBars = document.querySelectorAll(".width-bar");
 })();
 
 // ------------------------------------portfolio sliders effect----------------------------
-
 allZoomIcons.forEach((zoomIcon) => {
   zoomIcon.parentElement.addEventListener("click", (e) => {
-    console.log(e.target.dataset.src);
     sliderImages.forEach((sliderImage) => {
       if (sliderImage.dataset.src === e.target.dataset.src) {
         sliderImage.parentElement.parentElement.classList.add("active");
@@ -124,3 +122,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+

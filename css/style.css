@@ -335,6 +335,10 @@ section#services article:hover .fa-stack i:last-child {
 section#portfolio .slider {
   background-color: #0b0b0b;
   opacity: 0.9;
+  cursor: zoom-in;
+}
+section#portfolio .slider .modal-content {
+  background-color: transparent;
 }
 section#portfolio .slider span.close-icon {
   position: absolute;
@@ -343,25 +347,15 @@ section#portfolio .slider span.close-icon {
   color: var(--white-color);
   font-size: 2rem;
 }
-section#portfolio .slider .carousel .carousel-inner {
-  overflow: visible;
-}
 section#portfolio .slider .carousel .carousel-inner .carousel-item {
   position: relative;
+  cursor: pointer;
 }
 section#portfolio .slider .carousel .carousel-inner .carousel-item span {
-  position: absolute;
-  bottom: -30px;
-  right: 0;
+  display: block;
+  text-align: right;
   color: #ccc;
   font-size: 14px;
-}
-section#portfolio .slider .carousel .carousel-inner img {
-  cursor: zoom-in;
-}
-section#portfolio .slider .carousel .carousel-inner img:active {
-  cursor: grab;
-  transform: scale(1.05);
 }
 .carousel-control-next,
 .carousel-control-prev {
