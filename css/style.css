@@ -64,9 +64,6 @@
   --white-color: white;
   --black-color: black;
 }
-html {
-  /* scroll-padding-top: 4.3125rem; */
-}
 .section-title {
   color: var(--color-2);
   font-size: 2.5rem;
@@ -109,6 +106,75 @@ nav.fixed-top {
   right: 0;
   left: 0;
   z-index: 1030;
+}
+/* ------------------------------------Spinner------------------------------------ */
+section#spinner .layertop,
+section#spinner .layerbtm {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  background-color: white;
+}
+section#spinner .layertop {
+  top: 50%;
+  bottom: 0;
+  animation: 1s layertop;
+  animation-fill-mode: forwards;
+}
+section#spinner .layerbtm {
+  top: 0;
+  bottom: 50%;
+  animation: 1s layerbtm;
+  animation-fill-mode: forwards;
+}
+section#spinner .loading {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 10px solid;
+  border-color: #eee black #eee #eee;
+  border-radius: 50%;
+  z-index: 20001;
+  animation: 1s spin linear infinite, 0.5s disappear;
+  animation-fill-mode: forwards;
+}
+@keyframes layertop {
+  from {
+    top: 50%;
+  }
+  to {
+    top: 100%;
+    opacity: 0;
+  }
+}
+@keyframes layerbtm {
+  from {
+    bottom: 50%;
+  }
+  to {
+    bottom: 100%;
+    opacity: 0;
+  }
+}
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes disappear {
+  from {
+    display: block;
+  }
+  to {
+    display: none;
+  }
 }
 
 /* ------------------------------------Navbar------------------------------------ */
