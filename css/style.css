@@ -139,7 +139,7 @@ section#spinner .loading {
   border-color: #eee black #eee #eee;
   border-radius: 50%;
   z-index: 20001;
-  animation: 1s spin linear infinite, 0.5s disappear;
+  animation: 1s spin linear infinite, 0.5s 0.5s disappear;
   animation-fill-mode: forwards;
 }
 @keyframes layertop {
@@ -170,10 +170,14 @@ section#spinner .loading {
 }
 @keyframes disappear {
   from {
-    display: block;
+    /* display: block; */
+    opacity: 1;
+    visibility: visible;
   }
   to {
-    display: none;
+    /* display: none; */
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
